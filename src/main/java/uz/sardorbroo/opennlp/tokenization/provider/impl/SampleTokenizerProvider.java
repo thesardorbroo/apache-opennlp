@@ -2,9 +2,7 @@ package uz.sardorbroo.opennlp.tokenization.provider.impl;
 
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
-import opennlp.tools.tokenize.Tokenizer;
-import opennlp.tools.tokenize.TokenizerME;
-import opennlp.tools.tokenize.TokenizerModel;
+import opennlp.tools.tokenize.*;
 import org.apache.commons.lang3.StringUtils;
 import uz.sardorbroo.opennlp.tokenization.provider.TokenizerProvider;
 import uz.sardorbroo.opennlp.utils.ModelUtils;
@@ -12,13 +10,13 @@ import uz.sardorbroo.opennlp.utils.ModelUtils;
 @Slf4j
 public class SampleTokenizerProvider implements TokenizerProvider {
 
-    private String model = "/opennlp-models/opennlp-en-ud-ewt-tokens-1.0-1.9.3.bin";
+    private String model = "/opennlp-models/en-token.bin";
     private final Tokenizer tokenizer;
 
     @SneakyThrows
-    public SampleTokenizerProvider() {
+    public SampleTokenizerProvider(boolean withWhitespace) {
         TokenizerModel model = new TokenizerModel(ModelUtils.getModelInputStream(this.model));
-        tokenizer = new TokenizerME(model);
+        tokenizer = withWhitespace ? WhitespaceTokenizer.INSTANCE : new TokenizerME(model);
     }
 
     @SneakyThrows
