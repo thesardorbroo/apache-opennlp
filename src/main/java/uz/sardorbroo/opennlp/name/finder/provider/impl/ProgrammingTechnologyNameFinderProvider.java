@@ -78,6 +78,7 @@ public class ProgrammingTechnologyNameFinderProvider implements NameFinderProvid
         System.out.println(Arrays.toString(spans));
         System.out.println(Arrays.toString(words));
 
+
         return new String[0];
     }
 }

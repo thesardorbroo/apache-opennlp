@@ -15,9 +15,10 @@ public class ProgrammingTechnologyNameFinderProviderTest {
     @Test
     public void test() {
 
-        String sentence = "Java";
+        String sentence = "Web developers often utilize HTML/CSS along with React framework for building modern web applications.";
+        String backend = "My product is build with Spring, Java and Angular. And all data stores in our database MySql";
 
-        PROVIDER.findNamesInSingleSentence(sentence);
+        PROVIDER.findNamesInSingleSentence(backend);
     }
 
     @SneakyThrows
