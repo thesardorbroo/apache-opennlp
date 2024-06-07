@@ -20,6 +20,7 @@ import java.util.Collections;
 
 @Slf4j
 public class ProgrammingTechnologyFinderModelTrainer implements NameFinderModelTrainer {
+    private static final String NAME = "programming-tech";
     private final TokenNameFinderFactory factory;
     private final Language language;
     private final File trainFile;
@@ -30,8 +31,10 @@ public class ProgrammingTechnologyFinderModelTrainer implements NameFinderModelT
     public ProgrammingTechnologyFinderModelTrainer(Language language, String entity) {
         this.language = language;
         this.entity = entity;
-        this.trainFile = new File(FileUtils.getFileUrlWithResources("/opennlp-trains/en-ner-programming-technology.train").getFile());
-        this.trainedModelFile = new File("src/main/resources/opennlp-models/en-ner-programming-technology.bin");
+//        this.trainFile = new File(FileUtils.getFileUrlWithResources("/opennlp-trains/en-ner-programming-technology.train").getFile());
+//        this.trainedModelFile = new File("src/main/resources/opennlp-models/en-ner-programming-technology.bin");
+        this.trainFile = new File("model-trains/en-ner-programming-technology.train");
+        this.trainedModelFile = new File("models/en-ner-programming-technology.bin");
         this.factory = TokenNameFinderFactory.create(null, null, Collections.emptyMap(), new BioCodec());
     }
 
@@ -39,9 +42,16 @@ public class ProgrammingTechnologyFinderModelTrainer implements NameFinderModelT
     public ProgrammingTechnologyFinderModelTrainer(Language language, String entity, String trainingFileName, String trainedModelName) {
         this.language = language;
         this.entity = entity;
-        this.trainFile = new File(FileUtils.getFileUrlWithResources(trainingFileName).getFile());
-        this.trainedModelFile = new File(FileUtils.getFileUrlWithResources(trainedModelName).getFile());
+//        this.trainFile = new File(FileUtils.getFileUrlWithResources("/opennlp-trains/en-ner-programming-technology.train").getFile());
+//        this.trainedModelFile = new File("src/main/resources/opennlp-models/en-ner-programming-technology.bin");
+        this.trainFile = new File(trainingFileName);
+        this.trainedModelFile = new File(trainedModelName);
         this.factory = TokenNameFinderFactory.create(null, null, Collections.emptyMap(), new BioCodec());
+    }
+
+    @Override
+    public String getId() {
+        return NAME;
     }
 
     @SneakyThrows

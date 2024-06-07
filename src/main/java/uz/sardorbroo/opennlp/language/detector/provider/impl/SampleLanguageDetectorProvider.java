@@ -56,7 +56,7 @@ public class SampleLanguageDetectorProvider implements LanguageDetectorProvider 
         throwIfInvalidText(text);
 
         Language[] languages = detector.predictLanguages(text);
-        log.info("Languages are found in text. Languages: {}", Arrays.toString(languages));
+        log.info("Languages are found in text. Languages count: {}", languages.length);
         return languages;
     }
 

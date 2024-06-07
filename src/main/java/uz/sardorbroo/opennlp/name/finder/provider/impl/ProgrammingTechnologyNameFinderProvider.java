@@ -75,10 +75,11 @@ public class ProgrammingTechnologyNameFinderProvider implements NameFinderProvid
 
         Span[] spans = nameFinderME.find(words);
         nameFinderME.clearAdaptiveData();
-        System.out.println(Arrays.toString(spans));
-        System.out.println(Arrays.toString(words));
+        // System.out.println(Arrays.toString(spans));
+        // System.out.println(Arrays.toString(words));
 
-
-        return new String[0];
+        return Arrays.stream(spans)
+                .map(span -> words[span.getStart()])
+                .toArray(String[]::new);
     }
 }

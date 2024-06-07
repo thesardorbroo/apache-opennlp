@@ -1,6 +1,6 @@
 package uz.sardorbroo.opennlp.name.finder.trainer;
 
-public interface NameFinderModelTrainer {
+public interface NameFinderModelTrainer extends ModelTrainer {
 
     /**
      * Trains new model by given dataset(.train file)

@@ -3,4 +3,4 @@ Amazon gives us own product <START:tech> AWS <END> for solving devops problems
 Frontend developers tools are <START:tech> JavaScript <END> , <START:tech> HTML <END> , <START:tech> CSS <END> , <START:tech> TypeScript <END> , <START:tech> Vue.js <END> , <START:tech> React <END> , <START:tech> AngularJS <END> , <START:tech> Angular <END> , <START:tech> Tailwind <END> , <START:tech> Bootstrap <END> and etc .
 Some frontend developers writes backend code with tools like <START:tech> NodeJS <END>
 DevOps developers must know <START:tech> Docker <END> , <START:tech> Kubernetes <END> , <START:tech> Amazon Web Services <END> , <START:tech> Bash <END> and more .
-Data storing <START:tech> SQL <END> , <START:tech> NoSQL <END> , <START:tech> PostgreSQL <END> , <START:tech> MySQL <END> , <START:tech> MongoDB <END> , <START:tech> ElasticSearch <END> , <START:tech> RDS <END> , <START:tech> H2 <END>
+Data storing <START:tech> SQL <END> , <START:tech> NoSQL <END> , <START:tech> PostgreSQL <END> , <START:tech> MySQL <END> , <START:tech> MongoDB <END> , <START:tech> ElasticSearch <END> , <START:tech> rust <END> , <START:tech> RDS <END> , <START:tech> H2 <END>
